@@ -1,14 +1,14 @@
 SUBDIRS = gametest
 
-noinst_LTLIBRARIES = smd.la
+noinst_LTLIBRARIES = libsmd.la
 bin_PROGRAMS = smd
 
 EXTRA_DIST = proto/smd.proto
 
-smd_la_CXXFLAGS = $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS)
-smd_la_LIBADD = $(top_builddir)/xayagame/SMCrypto.la \
+libsmd_la_CXXFLAGS = $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS)
+libsmd_la_LIBADD = $(top_builddir)/xayagame/SMCrypto.la \
   $(JSONCPP_LIBS) $(GLOG_LIBS) $(PROTOBUF_LIBS)
-smd_la_SOURCES = \
+libsmd_la_SOURCES = \
   logic.cpp \
   proto/smd.pb.cc
 noinst_HEADERS = \
@@ -20,7 +20,7 @@ smd_CXXFLAGS = \
   $(GLOG_CFLAGS) \
   $(GFLAGS_CFLAGS) $(PROTOBUF_CFLAGS)
 smd_LDADD = \
-  $(builddir)/smd.la \
+  $(builddir)/libsmd.la \
   $(top_builddir)/xayagame/SMCrypto.la \
   $(GFLAGS_LIBS) $(PROTOBUF_LIBS)
 smd_SOURCES = main.cpp
@@ -30,7 +30,7 @@ TESTS = tests
 
 tests_CXXFLAGS = \
   $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS) $(GTEST_CFLAGS)
-tests_LDADD = $(builddir)/smd.la \
+tests_LDADD = $(builddir)/libsmd.la \
   $(JSONCPP_LIBS) $(GLOB_LIBS) $(PROTOBUF_LIBS) $(GTEST_LIBS)
 tests_SOURCES = \
   logic_tests.cpp
