@@ -10,10 +10,10 @@ smd_la_LIBADD = $(top_builddir)/xayagame/SMCrypto.la \
   $(JSONCPP_LIBS) $(GLOG_LIBS) $(PROTOBUF_LIBS)
 smd_la_SOURCES = \
   logic.cpp \
-  proto/SMCrypto.pb.cc
+  proto/smd.pb.cc
 noinst_HEADERS = \
   logic.hpp \
-  proto/SMCrypto.pb.h
+  proto/smd.pb.h
 
 smd_CXXFLAGS = \
   $(JSONCPP_CFLAGS) $(JSONRPCCLIENT_CFLAGS) $(JSONRPCSERVER_CFLAGS) \
