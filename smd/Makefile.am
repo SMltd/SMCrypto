@@ -1,7 +1,7 @@
 SUBDIRS = gametest
 
 noinst_LTLIBRARIES = libsmd.la
-bin_PROGRAMS = smd
+bin_PROGRAMS = smd 
 
 EXTRA_DIST = proto/smd.proto
 
@@ -36,4 +36,4 @@ tests_SOURCES = \
   logic_tests.cpp
 
 proto/smd.pb.h proto/smd.pb.cc: proto/smd.proto
-protoc --cpp_out=. "$<"
+	protoc --cpp_out=. "$<"
