@@ -3,7 +3,7 @@ SUBDIRS = gametest
 noinst_LTLIBRARIES = smd.la
 bin_PROGRAMS = smd
 
-EXTRA_DIST = proto/SMCrypto.proto
+EXTRA_DIST = proto/smd.proto
 
 smd_la_CXXFLAGS = $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS)
 smd_la_LIBADD = $(top_builddir)/xayagame/SMCrypto.la \
