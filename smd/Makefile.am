@@ -35,5 +35,5 @@ tests_LDADD = $(builddir)/smd.la \
 tests_SOURCES = \
   logic_tests.cpp
 
-proto/SMCrypto.pb.h proto/SMCrypto.pb.cc: proto/SMCrypto.proto
+proto/smd.pb.h proto/smd.pb.cc: proto/smd.proto
 protoc --cpp_out=. "$<"
