@@ -1,39 +1,39 @@
 SUBDIRS = gametest
 
-noinst_LTLIBRARIES = libmover.la
-bin_PROGRAMS = moverd
+noinst_LTLIBRARIES = smd.la
+bin_PROGRAMS = smd
 
-EXTRA_DIST = proto/mover.proto
+EXTRA_DIST = proto/SMCrypto.proto
 
-libmover_la_CXXFLAGS = $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS)
-libmover_la_LIBADD = $(top_builddir)/xayagame/libxayagame.la \
+smd_la_CXXFLAGS = $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS)
+smd_la_LIBADD = $(top_builddir)/xayagame/SMCrypto.la \
   $(JSONCPP_LIBS) $(GLOG_LIBS) $(PROTOBUF_LIBS)
-libmover_la_SOURCES = \
+smd_la_SOURCES = \
   logic.cpp \
-  proto/mover.pb.cc
+  proto/SMCrypto.pb.cc
 noinst_HEADERS = \
   logic.hpp \
-  proto/mover.pb.h
+  proto/SMCrypto.pb.h
 
-moverd_CXXFLAGS = \
+smd_CXXFLAGS = \
   $(JSONCPP_CFLAGS) $(JSONRPCCLIENT_CFLAGS) $(JSONRPCSERVER_CFLAGS) \
   $(GLOG_CFLAGS) \
   $(GFLAGS_CFLAGS) $(PROTOBUF_CFLAGS)
-moverd_LDADD = \
-  $(builddir)/libmover.la \
-  $(top_builddir)/xayagame/libxayagame.la \
+smd_LDADD = \
+  $(builddir)/smd.la \
+  $(top_builddir)/xayagame/SMCrypto.la \
   $(GFLAGS_LIBS) $(PROTOBUF_LIBS)
-moverd_SOURCES = main.cpp
+smd_SOURCES = main.cpp
 
 check_PROGRAMS = tests
 TESTS = tests
 
 tests_CXXFLAGS = \
   $(JSONCPP_CFLAGS) $(GLOG_CFLAGS) $(PROTOBUF_CFLAGS) $(GTEST_CFLAGS)
-tests_LDADD = $(builddir)/libmover.la \
+tests_LDADD = $(builddir)/smd.la \
   $(JSONCPP_LIBS) $(GLOB_LIBS) $(PROTOBUF_LIBS) $(GTEST_LIBS)
 tests_SOURCES = \
   logic_tests.cpp
 
-proto/mover.pb.h proto/mover.pb.cc: proto/mover.proto
-	protoc --cpp_out=. "$<"
+proto/SMCrypto.pb.h proto/SMCrypto.pb.cc: proto/SMCrypto.proto
+protoc --cpp_out=. "$<"
