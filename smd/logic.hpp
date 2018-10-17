@@ -5,7 +5,7 @@
 #ifndef MOVER_LOGIC_HPP
 #define MOVER_LOGIC_HPP
 
-#include "proto/mover.pb.h"
+#include "proto/smd.pb.h"
 
 #include "xayagame/gamelogic.hpp"
 #include "xayagame/storage.hpp"
