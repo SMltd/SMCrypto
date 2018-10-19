@@ -62,8 +62,8 @@ main (int argc, char** argv)
   config.StorageType = FLAGS_storage_type;
   config.DataDirectory = FLAGS_datadir;
 
-  mover::MoverLogic rules;
-  const int res = xaya::DefaultMain (config, "mv", rules);
+  smd::SmdLogic rules;
+  const int res = xaya::DefaultMain (config, "smc", rules);
 
   google::protobuf::ShutdownProtobufLibrary ();
   return res;

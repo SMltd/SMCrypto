@@ -10,11 +10,11 @@ using xaya::Chain;
 using xaya::GameStateData;
 using xaya::UndoData;
 
-namespace mover
+namespace smd 
 {
 
 GameStateData
-MoverLogic::GetInitialState (unsigned& height, std::string& hashHex)
+SmdLogic::GetInitialState (unsigned& height, std::string& hashHex)
 {
   switch (GetChain ())
     {
@@ -170,7 +170,7 @@ DirectionToString (const proto::Direction dir)
  * if the move is somehow invalid.
  */
 bool
-MoverLogic::ParseMove (const Json::Value& obj,
+SmdLogic::ParseMove (const Json::Value& obj,
                        proto::Direction& dir, unsigned& steps)
 {
   if (!obj.isObject ())
@@ -197,7 +197,7 @@ MoverLogic::ParseMove (const Json::Value& obj,
 }
 
 GameStateData
-MoverLogic::ProcessForward (const GameStateData& oldState,
+SmdLogic::ProcessForward (const GameStateData& oldState,
                             const Json::Value& blockData, UndoData& undoData)
 {
   proto::GameState state;
@@ -278,7 +278,7 @@ MoverLogic::ProcessForward (const GameStateData& oldState,
 }
 
 GameStateData
-MoverLogic::ProcessBackwards (const GameStateData& newState,
+SmdLogic::ProcessBackwards (const GameStateData& newState,
                               const Json::Value& blockData,
                               const UndoData& undoData)
 {
@@ -349,7 +349,7 @@ MoverLogic::ProcessBackwards (const GameStateData& newState,
 }
 
 Json::Value
-MoverLogic::GameStateToJson (const GameStateData& encodedState)
+SmdLogic::GameStateToJson (const GameStateData& encodedState)
 {
   proto::GameState state;
   CHECK (state.ParseFromString (encodedState));
@@ -377,4 +377,4 @@ MoverLogic::GameStateToJson (const GameStateData& encodedState)
   return res;
 }
 
-} // namespace mover
+} // namespace smd 

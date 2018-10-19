@@ -14,13 +14,13 @@
 
 #include <string>
 
-namespace mover
+namespace smd 
 {
 
 /**
  * The actual implementation of the game rules.
  */
-class MoverLogic : public xaya::GameLogic
+class SmdLogic : public xaya::GameLogic
 {
 
 private:
@@ -53,4 +53,4 @@ public:
 
 } // namespace mover
 
-#endif // MOVER_LOGIC_HPP
+#endif // SMD_LOGIC_HPP
