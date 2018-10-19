@@ -4,7 +4,7 @@
 
 syntax = "proto2";
 
-package mover.proto;
+package smd.proto;
 
 /** A possible direction of movement.  */
 enum Direction

@@ -179,23 +179,23 @@ void protobuf_AddDesc_proto_2fsmd_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\017proto/smd.proto\022\013smd.proto\"\\\n\013Player"
-    "State\022\t\n\001x\030\001 \001(\021\022\t\n\001y\030\002 \001(\021\022#\n\003dir\030\003 \001(\016"
-    "2\026.smd.proto.Direction\022\022\n\nsteps_left\030\004"
-    " \001(\r\"\213\001\n\tGameState\0224\n\007players\030\001 \003(\0132#.mo"
-    "ver.proto.GameState.PlayersEntry\032H\n\014Play"
-    "ersEntry\022\013\n\003key\030\001 \001(\t\022\'\n\005value\030\002 \001(\0132\030.m"
-    "over.proto.PlayerState:\0028\001\"\225\001\n\nPlayerUnd"
-    "o\022\016\n\006is_new\030\001 \001(\010\022,\n\014previous_dir\030\002 \001(\0162"
-    "\026.smd.proto.Direction\022\033\n\023previous_step"
-    "s_left\030\003 \001(\r\022,\n\014finished_dir\030\004 \001(\0162\026.mov"
-    "er.proto.Direction\"\210\001\n\010UndoData\0223\n\007playe"
-    "rs\030\001 \003(\0132\".smd.proto.UndoData.PlayersE"
-    "ntry\032G\n\014PlayersEntry\022\013\n\003key\030\001 \001(\t\022&\n\005val"
-    "ue\030\002 \001(\0132\027.smd.proto.PlayerUndo:\0028\001*v\n"
-    "\tDirection\022\010\n\004NONE\020\000\022\t\n\005RIGHT\020\001\022\010\n\004LEFT\020"
-    "\002\022\006\n\002UP\020\003\022\010\n\004DOWN\020\004\022\014\n\010RIGHT_UP\020\005\022\016\n\nRIG"
-    "HT_DOWN\020\006\022\013\n\007LEFT_UP\020\007\022\r\n\tLEFT_DOWN\020\010", 677);
+    "\n\017proto/smd.proto\022\tsmd.proto\"Z\n\013PlayerSt"
+    "ate\022\t\n\001x\030\001 \001(\021\022\t\n\001y\030\002 \001(\021\022!\n\003dir\030\003 \001(\0162\024"
+    ".smd.proto.Direction\022\022\n\nsteps_left\030\004 \001(\r"
+    "\"\207\001\n\tGameState\0222\n\007players\030\001 \003(\0132!.smd.pr"
+    "oto.GameState.PlayersEntry\032F\n\014PlayersEnt"
+    "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.smd.pro"
+    "to.PlayerState:\0028\001\"\221\001\n\nPlayerUndo\022\016\n\006is_"
+    "new\030\001 \001(\010\022*\n\014previous_dir\030\002 \001(\0162\024.smd.pr"
+    "oto.Direction\022\033\n\023previous_steps_left\030\003 \001"
+    "(\r\022*\n\014finished_dir\030\004 \001(\0162\024.smd.proto.Dir"
+    "ection\"\204\001\n\010UndoData\0221\n\007players\030\001 \003(\0132 .s"
+    "md.proto.UndoData.PlayersEntry\032E\n\014Player"
+    "sEntry\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.smd"
+    ".proto.PlayerUndo:\0028\001*v\n\tDirection\022\010\n\004NO"
+    "NE\020\000\022\t\n\005RIGHT\020\001\022\010\n\004LEFT\020\002\022\006\n\002UP\020\003\022\010\n\004DOW"
+    "N\020\004\022\014\n\010RIGHT_UP\020\005\022\016\n\nRIGHT_DOWN\020\006\022\013\n\007LEF"
+    "T_UP\020\007\022\r\n\tLEFT_DOWN\020\010", 661);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "proto/smd.proto", &protobuf_RegisterTypes);
   PlayerState::default_instance_ = new PlayerState();
